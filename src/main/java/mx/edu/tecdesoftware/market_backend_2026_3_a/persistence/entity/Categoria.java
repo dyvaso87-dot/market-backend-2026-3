@@ -1,6 +1,7 @@
 package mx.edu.tecdesoftware.market_backend_2026_3_a.persistence.entity;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "categorias")
@@ -9,12 +10,16 @@ public class Categoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "id_cateegoria")
+    @Column(name = "id_cateegoria")
     private Integer idCategoria;
 
     private String descripcion;
 
     private Boolean estado;
+
+    //Una categoría va a tener muchos productos
+    @OneToMany(mappedBy = "categoria")
+    private List<Producto> productos;
 
     public Integer getIdCategoria() {
         return idCategoria;
