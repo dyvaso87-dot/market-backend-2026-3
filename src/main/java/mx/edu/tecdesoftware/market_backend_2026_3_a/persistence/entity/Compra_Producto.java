@@ -55,4 +55,20 @@ public class Compra_Producto {
     public void setEstado(Boolean estado) {
         this.estado = estado;
     }
+
+    public Compra getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Compra compra) {
+        this.compra = compra;
+    }
+
+    public Compra getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Compra producto) {
+        this.producto = producto;
+    }
 }
