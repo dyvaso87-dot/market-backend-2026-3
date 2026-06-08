@@ -1,27 +1,24 @@
 package mx.edu.tecdesoftware.market_backend_2026_3_a.persistence.mapper;
 
 import mx.edu.tecdesoftware.market_backend_2026_3_a.domain.service.Product;
+import mx.edu.tecdesoftware.market_backend_2026_3_a.persistence.entity.Producto;
 import org.mapstruct.InheritConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring", uses = {CategoryMapper.class})
 public interface ProductMapper {
 
     @Mappings({
-            @Mapping(soruce = "idProducto",
-                    target = "productoId"),
-            @Mapping(soruce = "nombre",
-                    target = "name"),
-            @Mapping(soruce = "precioVenta",
-                    target = "price"),
-            @Mapping(soruce = "cantidadStock",
-                    target = "stock"),
-            @Mapping(soruce = "estado",
-                    target = "active"),
-            @Mapping(soruce = "categoria",
-                    target = "category")
+            @Mapping(source = "idProducto", target = "productId"),
+            @Mapping(source = "nombre", target = "name"),
+            @Mapping(source = "precioVenta", target = "price"),
+            @Mapping(source = "cantidadStock", target = "stock"),
+            @Mapping(source = "estado", target = "active"),
+            @Mapping(source = "categoria", target = "category")
     })
     Product toProduct(Producto producto);
     List<Product> toProducts(List<Producto> productos);
