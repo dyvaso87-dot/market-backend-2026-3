@@ -3,6 +3,7 @@ package mx.edu.tecdesoftware.market_backend_2026_3_a.persistence.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.MapsId;
 
 import java.io.Serializable;
 
